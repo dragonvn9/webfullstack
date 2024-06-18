@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pick Color</title>
+</head>
+<body>
+    <div class = "a1">
+        <h2> Chọn Màu Để Đổi Background</h2>
+        <label> Hãy chọn màu bạn yêu thích</label>
+        <input type="color" id="colorPick">
+        <span id="selectColor">#000000</span>
+        <button id="copyButton" onclick="copyColor()">Sao Chép Mã Màu</button>
+    </div>
+    <script>
+        //lấy tham chiếu đến thẻ input color
+        let colorPick = document.getElementById('colorPick');
+        // lấy tham chiếu đến thẻ span ra hiển thị màu
+        let selectColorSpan = document.getElementById('selectColor');
+        // lấy tham chiếu đến Button copy màu
+        let ccopyButton = document.getElementById('copyButton');
+
+        //bắt sự kiện khi người dùng thay đổi màu 
+        colorPick.addEventListener('input', function() {
+            // lấy giá trị màu đã chọn
+            let selectColor = colorPick.value;
+            // hiển thị giá trị màu đã chọn lên trang
+            selectColorSpan.textContent = selectColor;
+            //console.log(selectColor);
+            // thay đổi màu của body background
+            document.body.style.backgroundColor = selectColor;
+
+        }
+    )
+    // HÀM SAO CHÉP MÃ MÀU
+    function copyColor(){
+        // lấy giá trị màu đã chọn 
+        let colorV = selectColorSpan.textContent; // đây đã là text màu rồi
+        // tạo một thẻ textarea ẩn
+        let tempTextarea = document.createElement('textarea');
+        // thiết lập nội dung của textarea là giá trị của mã màu
+        tempTextarea.value = colorV ;
+        
+        // thêm thẻ texraera vào body
+        document.body.appendChild(tempTextarea);
+        // chọn toàn bộ nội dung trong textarea 
+        tempTextarea.select();
+        // chép nội dung đã chọn vào clipboard
+        document.execCommand('copy');
+        // xoá thẻ textarea tạm
+        document.body.removeChild(tempTextarea);
+        // thôg báo copy thành công
+        alert('Đã sao chép mã màu ' + colorV + ' vào clipboard.');
+
+    }
+
+
+    </script>
+    
+</body>
+</html>

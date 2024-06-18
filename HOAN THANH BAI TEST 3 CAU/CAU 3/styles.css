@@ -1,0 +1,74 @@
+#hand {
+    background-color: rgb(88, 183, 238);
+    padding-top: 7px;
+}
+
+#login {
+    display: inline-block;
+    width: 54px;
+    height: 33px;
+    
+    padding-top: 7px;
+    padding-left: 7px;
+  
+    text-align: left;
+}
+#land{
+    padding-top: 6px;
+}
+#size{
+    padding-top: 6px;
+}
+
+#sticky {
+    width: 900px;
+    height: 75px;
+    margin-left: 0px;
+    margin-top: 15px ;
+    background-color: white;
+}
+#bgcol {
+    background-color:#3b5971 ;
+    
+}
+#google{
+    
+    border-color: black;
+    margin-left: 129px;
+    
+
+}
+
+#sign {
+    background-color: #14ae5c;
+    margin-right: 0px;
+
+}
+
+#well {
+    padding-top: 2px;
+    text-align: center;
+    font-size: 16px;
+    
+}
+
+.circle {
+    display: inline-block;
+    width: 30px; /* Độ rộng của hình tròn */
+    height: 30px; /* Chiều cao của hình tròn */
+    border-radius: 50%; /* Tạo hình tròn */
+    background-color: rgb(93, 107, 235); /* Màu nền của hình tròn */
+    color: #fff; /* Màu chữ */
+    font-size: 16px; /* Kích cỡ chữ */
+    text-align: center; /* Căn giữa chữ */
+    line-height: 30px; /* Căn giữa theo chiều cao của hình tròn */
+    margin-top: 6px;
+}
+.styled-image {
+    width: auto;
+    height: auto;
+    margin-left: 200px;
+    margin-top: 120px;
+
+
+}

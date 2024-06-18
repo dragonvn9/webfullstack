@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Nhập hai số từ bàn phím</h2>
+
+<label>a:</label>
+<input type="number" id="inputA">
+<br><br>
+<label>b:</label>
+<input type="number" id="inputB">
+<br><br>
+
+<button onclick="timSoChinhPhuong()">Hiển Thị Số Chính Phương</button>
+
+<p id="result"></p>
+
+<script>
+    function timSoChinhPhuong(){
+        // get giá trị a từ input
+        let a = document.getElementById('inputA').value;
+        // get số b từ input
+        let b = document.getElementById('inputB').value;
+        // chuyển đổi gia trị từ string sang số
+        a = Number(a);
+        b = Number(b);
+        // kiểm tra a, b có phải là số không?
+        if (isNaN(a)||isNaN(b)) {
+            alert('vui lòng nhập vào con số');
+            return;
+        }
+        // tìm ra số nhỏ hơn trong hai số
+        if (a>b) {
+            let btam = a;
+            a = b;
+            b = btam;
+        }
+        // tạo ra một mảng để lưu trữ các số chính phương
+        let listSoChinhPhuong = [];
+        // logic tìm số chính phương trong khoảng từ a đến b
+
+        for (let i=a; i<=b;i=i+1){
+            if (Number.isInteger(Math.sqrt(i))) {
+                listSoChinhPhuong.push(i);
+            }
+        }
+        //console.log(listSoChinhPhuong)
+        // hiển thị kết quả tra trang web
+        if (listSoChinhPhuong.length>0){
+            document.getElementById('result').innerHTML = "các số chính phương từ" + a +"đến" + b + " là: <br>" + listSoChinhPhuong.join(", ");
+
+        } else document.getElementById('result').innerHTML = 'không có số chính phương nào!'
+
+
+    }
+
+
+
+</script>
+
+    
+</body>
+</html>
